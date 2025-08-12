@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage: For Normal Users (No Engineer Background)
-Download assets I list in my own [manifest]().
+Download assets I list in my own [manifest](https://github.com/Misora000/detariki-tool/blob/main/manifest.txt).
 ```sh
 python main.py
 ```
@@ -32,7 +32,7 @@ If you want to find assets not list in manifest.txt, you can run scripts manuall
 
 Be aware that in the following explanation, the term `possible` does not refer to any truly potential outcome, but rather to outcomes within a `predefined range of results`. Therefore, it does not encompass possibilities outside that range.  
 
-You can change the predefined range in [config.py]()
+You can change the predefined range in [config.py](https://github.com/Misora000/detariki-tool/blob/main/config.py)
 
 Before using this tool, you must need to know there's no any official manifest so that this tool basically uses `Brute-Force` to try assets url from CDN. All we can do is try to minimize the search range of brute-force.  
 
@@ -56,7 +56,7 @@ python costume.py -chr 2
 ...
 python costume.py -chr 400
 ```
-You can get character id from [chara_list.py]()
+You can get character id from [chara_list.py](https://github.com/Misora000/detariki-tool/blob/main/chara_list.py)
   
   
 If you are interesting in mining or finding the missed/unlisted assets, see the paremeter detail of each scripts.
@@ -109,7 +109,7 @@ python head.py
 ### Download Costume
 Costume is a combination structure of body, head and character.  
 Costume id is an integer like body id but not the same value and currently I don't know the naming rule.  
-I got a list of [costume id]() from the gallery page in game, however obviously the ids in this list are all concern to gacha and item, there still has many costumes (ex: nude) without any gacha or item icon.
+I got a list of [costume id](https://github.com/Misora000/detariki-tool/blob/main/costume-id.txt) from the gallery page in game, however obviously the ids in this list are all concern to gacha and item, there still has many costumes (ex: nude) without any gacha or item icon.
 ```sh
 usage: costume.py [-h] [-cos COS] [-chr CHR] [-o O] [-p P]
 
