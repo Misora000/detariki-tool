@@ -7,7 +7,7 @@ from color import *
 class Base():
     URL_API = 'https://api.detarikiz.com'
     URL_CDN = 'https://detarikiz.cdn.dmmgames.com'
-    PLATFORM = 'assets2019/StandaloneWindows64'
+    PLATFORM = 'assets2022/StandaloneWindows64'
 
     @staticmethod
     def cdn_get(path: str) -> bytes:

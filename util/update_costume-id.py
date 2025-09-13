@@ -4,6 +4,7 @@ from common import *
 
 COSTUME_ID_PATH = '../costume-id.txt'
 COSTUMEDATA_PATH = '../cache/chara/costumedata'
+COSTUME_CHANGE_ICON_PATH = '../cache/chara/costumechangeicon'
 
 parser = argparse.ArgumentParser()
 
@@ -34,14 +35,25 @@ if __name__ == '__main__':
             id_costumedata.append(int(v.split('_')[-2]))
     id_costumedata = sort_and_remove_duplicate(id_costumedata)
 
-    # merge all sources
-    id_merged = sort_and_remove_duplicate(id_curr + id_icon + id_costumedata)
+    # source 4: costumechangeicon in cache
+    id_costumechangeicon = []
+    for v in os.listdir(COSTUME_CHANGE_ICON_PATH):
+        name, ext = os.path.splitext(os.path.join(COSTUME_CHANGE_ICON_PATH, v))
+        name = os.path.split(name)[1]
+        if ext == '.png' or not name.startswith('costumechangeicon_costume_change_icon_'):
+            continue
+        id_costumechangeicon.append(int(name.split('_')[-1]))
+    id_costumechangeicon = sort_and_remove_duplicate(id_costumechangeicon)
 
-    print(f'  costume-id.txt: {len(id_curr)}')
-    print(f'    costume icon: {len(id_icon)}')
-    print(f'+    costumedata: {len(id_costumedata)}')
-    print('-' * 24)
-    print(f'          merged: {len(id_merged)}')
+    # merge all sources
+    id_merged = sort_and_remove_duplicate(id_curr + id_icon + id_costumechangeicon + id_costumedata)
+
+    print(f'     costume-id.txt: {len(id_curr)}')
+    print(f'       costume icon: {len(id_icon)}')
+    print(f' costumechange icon: {len(id_costumechangeicon)}')
+    print(f'+       costumedata: {len(id_costumedata)}')
+    print('-' * 27)
+    print(f'             merged: {len(id_merged)}')
 
 
     # update costume-id.txt

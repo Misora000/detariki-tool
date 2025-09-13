@@ -44,6 +44,12 @@ if __name__ == '__main__':
         elif name.startswith('costume_costumedata_costume_'):
             path = f'costume/costumedata/{name}'
 
+        elif name.startswith('costumeicon_costume_icon_'):
+            path = f'costume/costumeicon/{name}'
+
+        elif name.startswith('costumechangeicon_costume_change_icon_'):
+            path = f'costume/costumechangeicon/{name}'
+
         elif name.startswith('comic_') and os.path.splitext(name)[1] == '.png':
             path = f'comic/comic_{os.path.splitext(name)[0]}'
 

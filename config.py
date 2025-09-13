@@ -2,6 +2,8 @@ CACHE_PATH = 'cache'
 CACHE_CHR_HEAD = 'chara/head'
 CACHE_CHR_BODY = 'chara/body'
 CACHE_CHR_COSTUME = 'chara/costumedata'
+CACHE_CHR_COSTUME_ICON = 'chara/costumeicon'
+CACHE_CHR_COSTUME_CHANGE_ICON = 'chara/costumechangeicon'
 CACHE_CHR_HEAD_S = 'chara/head-s'
 CACHE_CHR_BODY_S = 'chara/body-s'
 CACHE_CHR_COSTUME_S = 'chara/costumedata-s'
@@ -15,9 +17,9 @@ MANIFEST_PATH = 'manifest.txt'
 # ------------------------ costume ----------------------
 COSTUME_ID_PATH = 'costume-id.txt'
 COSTUME_SP_ID_RANGE = [
-    # common swimsuits
+    # # common swimsuits
     [30039, 40048],
-    # underwear
+    # # underwear
     range(300000, 300010),
     range(300100, 300120),
     range(300200, 300230),
@@ -25,10 +27,25 @@ COSTUME_SP_ID_RANGE = [
     range(300400, 300410),
     range(300500, 300520),
     range(300600, 300610),
-    # nude
+    # # nude
     range(100000, 100120, 10),
+    # range(400000, 416000, 10), # ex: 409750 415150
 ]
 
+COSTUME_ICON_ID_RANGE = [
+    range(10000, 10020),
+    range(20000, 20030),
+    range(30000, 30300),
+    range(40000, 40500),
+    range(50000, 50500),
+    range(55000, 55700),
+    range(90000, 90200),
+]
+
+COSTUME_CHANGE_ICON_ID_RANGE = [
+    range(108000, 108050),
+    range(109000, 109050),
+]
 
 # ------------------------ body ------------------------
 # The possible id range of body asset
@@ -39,7 +56,7 @@ BODY_ID_RANGE = [
     range(500, 1600),
     range(10000, 10041, 10), # nude
     range(10100, 10150, 10), # half nude
-    range(20010, 20150, 10), # half nude
+    range(20001, 20500, 1),  # half nude
     range(30000, 30300),     # underwear
     range(40000, 41200), 
 ]
@@ -87,4 +104,4 @@ HEAD_ID_RANGE = []
 
 
 # ------------------------ picture ---------------------
-ILLUST_RANGE = range(1, 70) 
+ILLUST_RANGE = range(1, 90) 

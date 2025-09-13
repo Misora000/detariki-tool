@@ -27,6 +27,7 @@ If you want to find assets not list in manifest.txt, you can run scripts manuall
 |body.py|Download the body part of 3D model & QBi model|下載3D模型和Q版模型的身體部件|
 |head.py|Download the head part of 3D model & QBi model|下載3D模型和Q版模型的頭部件|
 |costume.py|Download full set of costume of 3D model & QBi model|下載完整的服裝模型(包含頭部與身體)|
+|costumeicon.py|Download costume icons|下載服裝icon|
 |pic.py|Download image objects like illlustration, comic, portrait|下載插圖、漫畫等圖片|
 ||||
 
@@ -131,6 +132,21 @@ python costume.py -cos 300200
 
 # example: download all possible costume
 python costum.py
+```
+
+## Donwload Costume Icon & Costume Change Icons
+Costume icon & costume change icons can be used to find the specific costume id by previewing pictures.
+```sh
+usage: costumeicon.py [-h] [-id ID] [-save] [-o O]
+
+options:
+  -h, --help  show this help message and exit
+  -id ID      icon id
+  -save       save asset bundle files (default: False)
+  -o O        output path
+
+# example: download all
+python costumeicon.py
 ```
 
 ### Download Picture
