@@ -29,7 +29,7 @@ COSTUME_SP_ID_RANGE = [
     range(300600, 300610),
     # # nude
     range(100000, 100120, 10),
-    # range(400000, 416000, 10), # ex: 409750 415150
+    range(400000, 416000, 10), # ex: 409750 415150
 ]
 
 COSTUME_ICON_ID_RANGE = [
