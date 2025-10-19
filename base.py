@@ -49,7 +49,11 @@ class Base():
         
     @staticmethod
     def extract_texture2D(input, save_dir=''):
-        u = UnityPy.load(input)
+        if type(input) == str:
+            with open(input, 'rb') as f:
+                u =  UnityPy.load(f.read())
+        else:
+            u = UnityPy.load(input)
         for obj in u.objects:
             if obj.type.name == 'Texture2D':
                 f_name = obj.peek_name()+'.png'

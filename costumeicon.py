@@ -12,6 +12,7 @@ parser.add_argument('-o', help='output path', default=CACHE_PATH, type=str)
 
 
 class CostumeIcon(Base):
+    dummy_r3_size = 3020
     dummy_r4_size = 2762
     dummy_r5_size = 4570
     dummy_change_size = 324
@@ -34,7 +35,7 @@ class CostumeIcon(Base):
                 else:
                     self.extract_texture2D(os.path.join(save_dir, a_name), save_dir)
         except Exception as e:
-            print(f'[ {red(a_name)} ] failed. {e}')
+            # print(f'[ {red(a_name)} ] failed. {e}')
             pass
 
 
@@ -55,7 +56,8 @@ class CostumeIcon(Base):
                     return
                 os.remove(path_ab)
                 print(f'[ {red(os.path.split(path)[1])} ] is dummy, delete')
-            except:
+            except Exception as e:
+                print(f'[ {red(p_name)} ] {e}')
                 pass
         
 
@@ -68,6 +70,8 @@ class CostumeIcon(Base):
             return size == self.dummy_r5_size
         if no < 50000 and no >= 40000:
             return size == self.dummy_r4_size
+        if no < 40000 and no >= 30000:
+            return size == self.dummy_r3_size
         return False
 
 
@@ -88,7 +92,8 @@ class CostumeIcon(Base):
                     return
                 os.remove(path_ab)
                 print(f'[ {red(os.path.split(path)[1])} ] is dummy, delete')
-            except:
+            except Exception as e:
+                print(f'[ {red(p_name)} ] {e}')
                 pass
 
 
